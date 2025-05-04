@@ -14,7 +14,8 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="https://via.placeholder.com/150x50?text=CashQuest" alt="Cash Quest Logo">
+                <img src="https://img.icons8.com/fluency/96/000000/money-bag-euro.png" alt="Cash Quest Logo">
+                <span>CashQuest</span>
             </div>
             <div class="nav-links">
                 <a href="#how-it-works">How It Works</a>
@@ -34,19 +35,24 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>How I Found <span class="highlight">$500</span> Hidden in My City</h1>
-                <h2>(And How You Can Too!)</h2>
-                <p class="subtitle">Join the digital treasure hunt that's paying out real cash to smart Americans like you.</p>
+                <h1>🇺🇸 Hidden Cash Challenge: <span class="highlight">Earn $500</span> This Week!</h1>
+                <div class="hero-checklist">
+                    <p><i class="fas fa-check-circle"></i> Complete offers → Get paid instantly</p>
+                    <p><i class="fas fa-check-circle"></i> Invite friends → Unlock bonuses</p>
+                    <p><i class="fas fa-check-circle"></i> Compete state-wide → Win epic prizes</p>
+                </div>
                 <div class="hero-cta">
-                    <a href="#join-now" class="btn-primary btn-large">START YOUR QUEST</a>
+                    <a href="#join-now" class="btn-primary btn-large btn-animated">
+                        <i class="fas fa-rocket"></i> JOIN FREE NOW
+                    </a>
                     <div class="live-stats">
                         <div class="pulse-dot"></div>
-                        <p>357 people earned rewards today</p>
+                        <p><strong>1,234</strong> rewards claimed today</p>
                     </div>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://via.placeholder.com/500x400?text=Treasure+Map" alt="Digital Treasure Map">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Digital Treasure Map">
                 <div class="floating-reward reward-1">
                     <span>+$50</span>
                 </div>
@@ -69,21 +75,21 @@
                 </div>
                 <div class="feed-items">
                     <div class="feed-item">
-                        <img src="https://via.placeholder.com/40x40" alt="User Avatar">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="User Avatar">
                         <div class="feed-content">
                             <p>⚡️ Jennifer (NY) just claimed $75!</p>
                             <span class="timestamp">Just now</span>
                         </div>
                     </div>
                     <div class="feed-item">
-                        <img src="https://via.placeholder.com/40x40" alt="User Avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar">
                         <div class="feed-content">
                             <p>🎮 Mike (TX) unlocked PlayStation Plus!</p>
                             <span class="timestamp">2 minutes ago</span>
                         </div>
                     </div>
                     <div class="feed-item">
-                        <img src="https://via.placeholder.com/40x40" alt="User Avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User Avatar">
                         <div class="feed-content">
                             <p>💰 Sarah (FL) won AirPods!</p>
                             <span class="timestamp">5 minutes ago</span>
@@ -106,21 +112,21 @@
                         <i class="fas fa-tasks"></i>
                     </div>
                     <h3>Complete Tasks</h3>
-                    <p>Finish quick offers, surveys, or try new apps to earn Coins instantly.</p>
+                    <p>Finish quick offers like trying games or apps to earn Coins instantly. No credit card needed!</p>
                 </div>
                 <div class="step">
                     <div class="step-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Invite Friends</h3>
-                    <p>Tag friends to join your squad and multiply your earnings up to 5X.</p>
+                    <p>Tag friends to join your squad and multiply your earnings up to 5X. Earn $5 per referral!</p>
                 </div>
                 <div class="step">
                     <div class="step-icon">
                         <i class="fas fa-gift"></i>
                     </div>
                     <h3>Claim Rewards</h3>
-                    <p>Exchange your Coins for cash, gift cards, or enter raffles for premium prizes.</p>
+                    <p>Cash out directly to PayPal/CashApp within 24 hours. All 50 states qualify!</p>
                 </div>
             </div>
             <div class="progress-example">
@@ -128,14 +134,30 @@
                 <div class="progress-bar">
                     <div class="progress" style="width: 40%;"></div>
                 </div>
-                <p class="progress-text">$50/100 unlocked! Tag 2 friends to speed up!</p>
+                <p class="progress-text">$50/$100 unlocked! Tag 2 friends to speed up!</p>
+                <a href="#join-now" class="btn-primary">START EARNING NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="flash-reward">
+        <div class="container">
+            <div class="flash-content">
+                <div class="flash-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="flash-text">
+                    <h3>⏳ FLASH REWARD (Next <span id="countdown-timer">30:00</span> mins only!)</h3>
+                    <p>Complete 2 offers → Get 2x Coins!</p>
+                </div>
+                <a href="#join-now" class="btn-secondary btn-flash">🚀 START NOW</a>
             </div>
         </div>
     </section>
 
     <section class="rewards" id="rewards">
         <div class="container">
-            <h2 class="section-title">Unlock These <span class="highlight">Rewards</span></h2>
+            <h2 class="section-title">🎁 Earn Instant <span class="highlight">Rewards</span></h2>
             <div class="reward-tabs">
                 <button class="tab-btn active" data-target="instant-rewards">Instant Rewards</button>
                 <button class="tab-btn" data-target="squad-rewards">Squad Rewards</button>
@@ -145,57 +167,60 @@
                 <div class="reward-cards">
                     <div class="reward-card">
                         <div class="card-header">
-                            <span class="coin-cost">10 Coins</span>
+                            <span class="coin-cost">Complete 1 Offer</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Starbucks" alt="Starbucks Gift Card">
-                            <h3>$20 Starbucks</h3>
-                            <p>Gift Card</p>
+                            <img src="https://img.icons8.com/fluency/96/000000/money-bag-euro.png" alt="Cash">
+                            <h3>$3 Cash</h3>
+                            <p>Try a game for 30 seconds!</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Claim Now</a>
+                            <a href="#join-now" class="btn-secondary">Claim Now</a>
                         </div>
                     </div>
                     <div class="reward-card">
                         <div class="card-header">
-                            <span class="coin-cost">25 Coins</span>
+                            <span class="coin-cost">5 Min Task</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Netflix" alt="Netflix">
-                            <h3>Free Netflix</h3>
-                            <p>1 Month</p>
+                            <img src="https://img.icons8.com/color/96/000000/starbucks.png" alt="Starbucks">
+                            <h3>$10 Starbucks</h3>
+                            <p>Fill a quick survey</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Claim Now</a>
+                            <a href="#join-now" class="btn-secondary">Claim Now</a>
                         </div>
                     </div>
                     <div class="reward-card">
                         <div class="card-header popular">
-                            <span class="coin-cost">50 Coins</span>
+                            <span class="coin-cost">Invite 3 Friends</span>
                             <span class="popular-tag">POPULAR</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Cash" alt="Cash">
-                            <h3>$50 Cash</h3>
-                            <p>Direct to PayPal</p>
+                            <img src="https://img.icons8.com/color/96/000000/paypal.png" alt="PayPal">
+                            <h3>$15 Cash</h3>
+                            <p>Direct to PayPal/CashApp</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Claim Now</a>
+                            <a href="#join-now" class="btn-secondary">Claim Now</a>
                         </div>
                     </div>
                     <div class="reward-card">
                         <div class="card-header">
-                            <span class="coin-cost">75 Coins</span>
+                            <span class="coin-cost">50 Coins</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Super+Bowl" alt="Super Bowl">
-                            <h3>VIP Ticket</h3>
-                            <p>Super Bowl Entry</p>
+                            <img src="https://img.icons8.com/color/96/000000/controller.png" alt="PS5">
+                            <h3>PS5 Giveaway</h3>
+                            <p>1 Entry per 50 Coins</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Claim Now</a>
+                            <a href="#join-now" class="btn-secondary">Claim Now</a>
                         </div>
                     </div>
+                </div>
+                <div class="cta-center">
+                    <a href="#join-now" class="btn-primary btn-large">👉 GET STARTED NOW</a>
                 </div>
             </div>
             <div class="reward-content" id="squad-rewards">
@@ -205,7 +230,7 @@
                             <span class="coin-cost">3 Friends</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Squad" alt="Squad Bonus">
+                            <img src="https://img.icons8.com/fluency/96/000000/group.png" alt="Squad Bonus">
                             <h3>$10 Cash</h3>
                             <p>+ 1 Fortune Wheel Spin</p>
                         </div>
@@ -218,7 +243,7 @@
                             <span class="coin-cost">5 Friends</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Gold" alt="Gold Vault">
+                            <img src="https://img.icons8.com/fluency/96/000000/treasure-chest.png" alt="Gold Vault">
                             <h3>Gold Vault Access</h3>
                             <p>2x More Profitable Offers</p>
                         </div>
@@ -232,7 +257,7 @@
                             <span class="popular-tag">BEST VALUE</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Wolf" alt="Wolf Pack">
+                            <img src="https://img.icons8.com/color/96/000000/wolf.png" alt="Wolf Pack">
                             <h3>Wolf Pack Status</h3>
                             <p>$50 + Spotify Premium</p>
                         </div>
@@ -245,7 +270,7 @@
                             <span class="coin-cost">20 Friends</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=VIP" alt="VIP Mafia">
+                            <img src="https://img.icons8.com/fluency/96/000000/crown.png" alt="VIP Mafia">
                             <h3>VIP Mafia Status</h3>
                             <p>$200 Cash Guaranteed</p>
                         </div>
@@ -262,7 +287,7 @@
                             <span class="coin-cost">Bronze Badge</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Bronze" alt="Bronze Explorer">
+                            <img src="https://img.icons8.com/color/96/000000/bronze-medal--v1.png" alt="Bronze Explorer">
                             <h3>Bronze Explorer</h3>
                             <p>Instagram Badge #CashQuestExplorer</p>
                         </div>
@@ -275,7 +300,7 @@
                             <span class="coin-cost">Silver Badge</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Silver" alt="Silver Adventurer">
+                            <img src="https://img.icons8.com/color/96/000000/silver-medal--v1.png" alt="Silver Adventurer">
                             <h3>Silver Adventurer</h3>
                             <p>Early Access to New Offers</p>
                         </div>
@@ -289,7 +314,7 @@
                             <span class="popular-tag">EXCLUSIVE</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Gold" alt="Gold Treasure Hunter">
+                            <img src="https://img.icons8.com/color/96/000000/gold-medal--v1.png" alt="Gold Treasure Hunter">
                             <h3>Gold Treasure Hunter</h3>
                             <p>Custom "I'm Rich 💸" GIF</p>
                         </div>
@@ -302,7 +327,7 @@
                             <span class="coin-cost">Diamond Badge</span>
                         </div>
                         <div class="card-body">
-                            <img src="https://via.placeholder.com/80x80?text=Diamond" alt="Diamond Legend">
+                            <img src="https://img.icons8.com/color/96/000000/diamond--v1.png" alt="Diamond Legend">
                             <h3>Diamond Legend</h3>
                             <p>Weekend in Miami + $500</p>
                         </div>
@@ -317,32 +342,32 @@
 
     <section class="state-challenge">
         <div class="container">
-            <h2 class="section-title">State vs State <span class="highlight">Challenge</span></h2>
+            <h2 class="section-title">🏆 State vs State <span class="highlight">Leaderboard</span></h2>
             <p class="section-description">Which state will claim the most treasure this week?</p>
             <div class="leaderboard">
                 <div class="leaderboard-item top">
                     <span class="rank">1</span>
-                    <span class="state">Florida</span>
+                    <span class="state">Texas</span>
                     <div class="progress-bar">
                         <div class="progress" style="width: 90%;"></div>
                     </div>
-                    <span class="points">2,456 points</span>
+                    <span class="points">$2,340 earned</span>
                 </div>
                 <div class="leaderboard-item">
                     <span class="rank">2</span>
-                    <span class="state">Texas</span>
+                    <span class="state">California</span>
                     <div class="progress-bar">
                         <div class="progress" style="width: 75%;"></div>
                     </div>
-                    <span class="points">1,832 points</span>
+                    <span class="points">$1,980 earned</span>
                 </div>
                 <div class="leaderboard-item">
                     <span class="rank">3</span>
-                    <span class="state">California</span>
+                    <span class="state">Florida</span>
                     <div class="progress-bar">
                         <div class="progress" style="width: 65%;"></div>
                     </div>
-                    <span class="points">1,590 points</span>
+                    <span class="points">$1,750 earned</span>
                 </div>
                 <div class="leaderboard-item">
                     <span class="rank">4</span>
@@ -350,7 +375,7 @@
                     <div class="progress-bar">
                         <div class="progress" style="width: 55%;"></div>
                     </div>
-                    <span class="points">1,340 points</span>
+                    <span class="points">$1,340 earned</span>
                 </div>
                 <div class="leaderboard-item">
                     <span class="rank">5</span>
@@ -358,22 +383,23 @@
                     <div class="progress-bar">
                         <div class="progress" style="width: 40%;"></div>
                     </div>
-                    <span class="points">980 points</span>
+                    <span class="points">$980 earned</span>
                 </div>
             </div>
             <div class="state-cta">
-                <p>Win $100 for everyone in your state! <a href="#join-now" class="text-link">Join your state's team now!</a></p>
+                <p class="state-bonus">New Yorkers, you're falling behind! <span class="highlight">Earn $10 extra</span> for every 3 offers this week.</p>
+                <a href="#join-now" class="btn-primary">Join your state's team now!</a>
             </div>
         </div>
     </section>
 
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2 class="section-title">Real People, <span class="highlight">Real Rewards</span></h2>
+            <h2 class="section-title">💬 Success <span class="highlight">Stories</span></h2>
             <div class="testimonial-cards">
                 <div class="testimonial-card">
                     <div class="testimonial-image">
-                        <img src="https://via.placeholder.com/120x120" alt="Testimonial">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Testimonial">
                     </div>
                     <div class="testimonial-content">
                         <p>"I was skeptical at first, but I've already cashed out $347 in my first month. Super easy!"</p>
@@ -383,13 +409,13 @@
                         </div>
                     </div>
                     <div class="testimonial-reward">
-                        <img src="https://via.placeholder.com/60x60?text=$$$" alt="Cash">
+                        <img src="https://img.icons8.com/fluency/96/000000/money-bag.png" alt="Cash">
                         <p>Won $347</p>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-image">
-                        <img src="https://via.placeholder.com/120x120" alt="Testimonial">
+                        <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="Testimonial">
                     </div>
                     <div class="testimonial-content">
                         <p>"My squad and I all won AirPods last week! Already working on our next big prize!"</p>
@@ -399,13 +425,13 @@
                         </div>
                     </div>
                     <div class="testimonial-reward">
-                        <img src="https://via.placeholder.com/60x60?text=Pods" alt="AirPods">
+                        <img src="https://img.icons8.com/color/96/000000/airpods.png" alt="AirPods">
                         <p>Won AirPods</p>
                     </div>
                 </div>
             </div>
             <div class="social-proof-strip">
-                <p>We've Turned 357 Side Hustlers Into Cash Kings Last Week. You're Next!</p>
+                <i class="fab fa-instagram"></i> Tag <span class="highlight">#CashQuestWins</span> on social media to get featured!
             </div>
         </div>
     </section>
@@ -419,7 +445,7 @@
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
                     <input type="text" placeholder="Your State" required>
-                    <button type="submit" class="btn-primary btn-large">START YOUR QUEST</button>
+                    <button type="submit" class="btn-primary btn-large btn-animated">START YOUR QUEST</button>
                 </form>
                 <div class="spots-left">
                     <p><span class="highlight">3 spots left</span> in your state. Grab yours now!</p>
@@ -430,6 +456,7 @@
                 <div class="box-container">
                     <div class="box">
                         <span class="question-mark">?</span>
+                        <div class="glow"></div>
                         <div class="box-hover">
                             <p>Click to open! Could be $5... or $500!</p>
                         </div>
@@ -442,33 +469,33 @@
 
     <section class="faq" id="faq">
         <div class="container">
-            <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+            <h2 class="section-title">❓ Frequently Asked <span class="highlight">Questions</span></h2>
             <div class="faq-items">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Is this legit?</h3>
+                        <h3>How do I get paid?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! We've paid out $12,340 last week alone. We make money from our partners when you complete offers, and we share the revenue with you!</p>
+                        <p>Via PayPal or CashApp within 24 hours of redeeming your rewards. Simply complete the required tasks, earn coins, and cash out!</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>How do I track my coins?</h3>
+                        <h3>Is this available in my state?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Once you sign up, you'll get access to your live dashboard that updates every 10 minutes. You can track all your earnings and rewards there.</p>
+                        <p>Yes! All 50 states qualify. We have special bonuses for residents of Texas, California, Florida, and New York.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>How soon can I get my rewards?</h3>
+                        <h3>Are the offers really free?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Most rewards are processed within 24-48 hours. PayPal cash can take up to 7 days depending on verification.</p>
+                        <p>100% free – no credit card needed. All offers can be completed without any purchase or payment required.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -477,9 +504,12 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>For every friend you invite who completes their first offer, you earn 3 bonus Coins. Plus, you'll unlock special squad bonuses when you hit certain referral milestones!</p>
+                        <p>For every friend you invite who completes their first offer, you earn 3 bonus Coins plus $5. Plus, you'll unlock special squad bonuses when you hit certain referral milestones!</p>
                     </div>
                 </div>
+            </div>
+            <div class="cta-center">
+                <a href="#join-now" class="btn-primary btn-large">🔥 JOIN FREE NOW</a>
             </div>
         </div>
     </section>
@@ -488,7 +518,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="https://via.placeholder.com/150x50?text=CashQuest" alt="Cash Quest Logo">
+                    <div class="logo">
+                        <img src="https://img.icons8.com/fluency/96/000000/money-bag-euro.png" alt="Cash Quest Logo">
+                        <span>CashQuest</span>
+                    </div>
                     <p>Unlock Secret Rewards & Level Up Your Wallet!</p>
                 </div>
                 <div class="footer-links">

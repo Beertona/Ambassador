@@ -83,7 +83,43 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(updateCountdown, 1000);
     }
 
-    // Mystery box animation
+    // Countdown timer for flash offer
+    const flashTimerElement = document.getElementById('countdown-timer');
+    if (flashTimerElement) {
+        let minutes = 29;
+        let seconds = 59;
+        
+        const updateFlashTimer = () => {
+            seconds--;
+            
+            if (seconds < 0) {
+                minutes--;
+                seconds = 59;
+            }
+            
+            if (minutes < 0) {
+                // Reset to 30 minutes when it reaches 0
+                minutes = 29;
+                seconds = 59;
+            }
+            
+            flashTimerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            // Add urgency color when time is running low
+            if (minutes < 5) {
+                flashTimerElement.style.color = '#ff3d00';
+                flashTimerElement.classList.add('urgent');
+            } else {
+                flashTimerElement.style.color = '';
+                flashTimerElement.classList.remove('urgent');
+            }
+        };
+        
+        // Update every second
+        setInterval(updateFlashTimer, 1000);
+    }
+
+    // Enhanced mystery box rewards with better prizes
     const mysteryBox = document.querySelector('.box');
     if (mysteryBox) {
         mysteryBox.addEventListener('mouseenter', () => {
@@ -95,7 +131,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         mysteryBox.addEventListener('click', () => {
-            const rewards = ['$5', '$10', '$25', '$50', '$100', '$500', 'Netflix Subscription', 'AirPods', 'Gift Card'];
+            // American-themed rewards
+            const rewards = [
+                '$5 Cash', 
+                '$10 Cash', 
+                '$25 Cash', 
+                '$50 Cash', 
+                '$100 Cash',
+                '$500 Cash', 
+                'Netflix Subscription', 
+                'AirPods', 
+                'Amazon Gift Card',
+                'Starbucks Card',
+                'PS5 Raffle Entry',
+                '2x Coins Multiplier'
+            ];
+            
             const randomReward = rewards[Math.floor(Math.random() * rewards.length)];
             
             mysteryBox.innerHTML = `<span class="reward-reveal">${randomReward}</span>`;
@@ -107,22 +158,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Reset the box after a delay
                 setTimeout(() => {
-                    mysteryBox.innerHTML = '<span class="question-mark">?</span><div class="box-hover"><p>Click to open! Could be $5... or $500!</p></div>';
+                    mysteryBox.innerHTML = '<span class="question-mark">?</span><div class="glow"></div><div class="box-hover"><p>Click to open! Could be $5... or $500!</p></div>';
                     mysteryBox.classList.remove('opened');
                 }, 2000);
             }, 500);
         });
     }
 
-    // Create fake live feed updates
+    // Enhanced live feed with more American names and states
     const feedItems = document.querySelector('.feed-items');
     if (feedItems) {
-        const states = ['NY', 'CA', 'TX', 'FL', 'IL', 'PA', 'OH', 'GA', 'NC', 'MI'];
-        const names = ['Jennifer', 'Mike', 'Sarah', 'David', 'Emma', 'John', 'Lisa', 'Alex', 'Maria', 'James'];
+        const states = ['NY', 'CA', 'TX', 'FL', 'IL', 'PA', 'OH', 'GA', 'NC', 'MI', 'VA', 'WA', 'AZ', 'CO', 'TN'];
+        const names = [
+            'Jennifer', 'Mike', 'Sarah', 'David', 'Emma', 'John', 'Lisa', 'Alex', 'Maria', 'James',
+            'Jessica', 'Christopher', 'Ashley', 'Matthew', 'Amanda', 'Daniel', 'Stephanie', 'Kevin', 'Melissa', 'Justin'
+        ];
         const rewards = [
             '$25', '$50', '$75', '$100', '$150', 
             'AirPods', 'PlayStation Plus', 'Netflix Subscription', 
-            'Spotify Premium', 'Amazon Gift Card', 'Starbucks Card'
+            'Spotify Premium', 'Amazon Gift Card', 'Starbucks Card',
+            '$10 PayPal', '$15 CashApp', '$20 Venmo', '$30 Amazon'
         ];
         
         const getRandomElement = (array) => array[Math.floor(Math.random() * array.length)];
@@ -332,4 +387,21 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Show first notification after 20 seconds
     setTimeout(createNotificationBadge, 20000);
+
+    // Add animation to buttons
+    const animateButtons = () => {
+        const ctaButtons = document.querySelectorAll('.btn-animated');
+        
+        ctaButtons.forEach(button => {
+            button.addEventListener('mouseover', () => {
+                button.classList.add('hover');
+            });
+            
+            button.addEventListener('mouseout', () => {
+                button.classList.remove('hover');
+            });
+        });
+    };
+    
+    animateButtons();
 }); 
