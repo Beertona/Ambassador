@@ -3,25 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mobile menu toggle for new header
     const menuToggle = document.querySelector('.menu-toggle');
-    const headerNav = document.querySelector('.header-nav');
+    const navLinks = document.querySelector('.nav-links');
     
-    if (menuToggle && headerNav) {
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function() {
-            headerNav.classList.toggle('active');
+            navLinks.classList.toggle('active');
             this.classList.toggle('active');
         });
         
         // Close mobile menu when a link is clicked
-        document.querySelectorAll('.nav-link, .nav-cta').forEach(item => {
+        document.querySelectorAll('.nav-link, .join-now-btn').forEach(item => {
             item.addEventListener('click', function() {
-                headerNav.classList.remove('active');
+                navLinks.classList.remove('active');
                 menuToggle.classList.remove('active');
             });
         });
     }
     
     // Add active class to current nav link
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinkItems = document.querySelectorAll('.nav-link');
     
     function setActiveLink() {
         const sections = document.querySelectorAll('section, .hero');
@@ -30,14 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            const headerHeight = document.querySelector('.usa-header').offsetHeight;
+            const headerHeight = document.querySelector('.top-header').offsetHeight;
             
             if (window.scrollY >= sectionTop - headerHeight - 50) {
                 currentSection = section.getAttribute('id') || (section.classList.contains('hero') ? 'home' : '');
             }
         });
         
-        navLinks.forEach(link => {
+        navLinkItems.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
             if ((href === '#' && currentSection === 'home') || 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Scroll to offers section
                 const offersSection = document.getElementById('offers');
                 if (offersSection) {
-                    const navbarHeight = document.querySelector('.usa-header').offsetHeight;
+                    const navbarHeight = document.querySelector('.top-header').offsetHeight;
                     window.scrollTo({
                         top: offersSection.offsetTop - navbarHeight,
                         behavior: 'smooth'
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 // Adjust for fixed navbar height
-                const navbarHeight = document.querySelector('.usa-header').offsetHeight;
+                const navbarHeight = document.querySelector('.top-header').offsetHeight;
                 
                 window.scrollTo({
                     top: targetElement.offsetTop - navbarHeight,
@@ -198,185 +198,242 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 800);
         });
     });
+
+    // Animate elements on scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.step, .offer, .testimonial, .faq-item, .hero-content, .hero-image');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.classList.add('animate');
+            }
+        });
+    };
     
-    // Offer filtering
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Check on page load
+    
+    // Dynamic countdown timer starting from 6d 23h 57m 58s
+    function startCountdown() {
+        const countdownElement = document.querySelector('.countdown');
+        
+        if (countdownElement) {
+            // Start with initial values
+            let days = 6;
+            let hours = 23;
+            let minutes = 57;
+            let seconds = 58;
+            
+            // Update the countdown every 1 second
+            const updateCountdown = function() {
+                // Decrease seconds
+                seconds--;
+                
+                // Handle time rollover
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        
+                        if (hours < 0) {
+                            hours = 23;
+                            days--;
+                            
+                            if (days < 0) {
+                                // Timer reached zero
+                                clearInterval(countdownInterval);
+                                countdownElement.innerHTML = "CHALLENGE ENDED!";
+                                return;
+                            }
+                        }
+                    }
+                }
+                
+                // Display the result
+                countdownElement.innerHTML = `<span class="time-unit">${days}d</span> <span class="time-unit">${hours}h</span> <span class="time-unit">${minutes}m</span> <span class="time-unit">${seconds}s</span>`;
+            };
+            
+            // Call initially without delay
+            updateCountdown();
+            
+            // Set up the interval for future updates
+            const countdownInterval = setInterval(updateCountdown, 1000);
+        }
+    }
+    
+    startCountdown();
+    
+    // Create particle effects in hero section
+    function createParticles() {
+        const hero = document.querySelector('.hero');
+        const particlesContainer = document.createElement('div');
+        particlesContainer.className = 'particles';
+        
+        if (hero) {
+            hero.appendChild(particlesContainer);
+            
+            // Create 50 particles
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                // Random animation delay
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                // Floating animation
+                particle.style.animation = `float ${Math.random() * 10 + 10}s infinite linear`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+    }
+    
+    createParticles();
+    
+    // Enhance offer filter buttons
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const offers = document.querySelectorAll('.offer');
+    const offerItems = document.querySelectorAll('.offer');
     
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Update active filter button
+            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
             this.classList.add('active');
             
             // Get filter value
-            const filterValue = this.dataset.filter;
+            const filterValue = this.getAttribute('data-filter');
             
-            // Show/hide offers based on filter
-            offers.forEach(offer => {
-                if (filterValue === 'all' || offer.dataset.category === filterValue) {
-                    offer.style.display = 'block';
-                    // Add fade-in animation
-                    offer.classList.remove('fade-in');
-                    void offer.offsetWidth; // Trigger reflow
-                    offer.classList.add('fade-in');
+            // Filter offers
+            offerItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0) rotateX(0)';
+                    }, 10);
                 } else {
-                    offer.style.display = 'none';
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px) rotateX(10deg)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
                 }
             });
         });
     });
     
-    // Animation for elements as they come into view
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.step, .offer, .testimonial, .faq-item, .leaderboard-row');
+    // Add parallax scroll effect
+    function parallaxScroll() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.hero-content, .hero-image, .usa-stars');
         
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
+        parallaxElements.forEach(element => {
+            const speed = element.classList.contains('hero-content') ? 0.5 : 
+                         element.classList.contains('hero-image') ? -0.2 : 0.3;
             
-            if (elementPosition < windowHeight - 100) {
-                element.classList.add('fade-in');
-            }
+            element.style.transform = `translateY(${scrolled * speed}px)`;
         });
-    };
-    
-    // Call on load and scroll
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Call on initial load
-    
-    // Add active class to nav links based on scroll position
-    const highlightNavOnScroll = function() {
-        const sections = document.querySelectorAll('section, header.hero');
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            const headerHeight = document.querySelector('.usa-header').offsetHeight;
-            
-            // Get the corresponding nav link
-            let navLink = null;
-            if (section.id) {
-                navLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
-            } else if (section.classList.contains('hero')) {
-                navLink = document.querySelector(`.nav-link[href="#"]`);
-            }
-            
-            // Check if we're in the section
-            if (window.scrollY >= sectionTop - headerHeight - 100 && 
-                window.scrollY < sectionTop + sectionHeight - headerHeight) {
-                // Add active class to nav link
-                if (navLink) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    navLink.classList.add('active');
-                }
-            }
-        });
-    };
-    
-    // Call on scroll
-    window.addEventListener('scroll', highlightNavOnScroll);
-    highlightNavOnScroll(); // Call on initial load
-    
-    // Countdown timer for urgency
-    function startCountdown() {
-        const countdownElement = document.querySelector('.countdown');
-        if (!countdownElement) return;
-        
-        // Set countdown for 3 days from now
-        const countdownDate = new Date();
-        countdownDate.setDate(countdownDate.getDate() + 3);
-        
-        const countdownTimer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            
-            if (distance < 0) {
-                clearInterval(countdownTimer);
-                countdownElement.innerHTML = "Challenge Started!";
-            }
-        }, 1000);
     }
     
-    // Create star elements in USA stars containers
-    function createStars() {
-        const starsContainers = document.querySelectorAll('.usa-stars');
+    window.addEventListener('scroll', parallaxScroll);
+    
+    // Add tilt effect to cards
+    const tiltElements = document.querySelectorAll('.offer, .step');
+    
+    tiltElements.forEach(element => {
+        element.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const xPercent = x / rect.width;
+            const yPercent = y / rect.height;
+            
+            const rotateY = (xPercent - 0.5) * 10;
+            const rotateX = (0.5 - yPercent) * 10;
+            
+            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        });
         
-        starsContainers.forEach(container => {
-            // Create 20 stars in each container
-            for (let i = 0; i < 20; i++) {
-                const star = document.createElement('span');
-                star.className = 'usa-star';
-                star.textContent = '★';
-                star.style.position = 'absolute';
-                star.style.opacity = Math.random() * 0.3 + 0.1;
-                star.style.fontSize = Math.random() * 15 + 10 + 'px';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animation = `float ${Math.random() * 6 + 4}s ease-in-out infinite`;
-                star.style.animationDelay = `${Math.random() * 5}s`;
-                star.style.color = Math.random() > 0.5 ? 'rgba(255, 255, 255, 0.3)' : 'rgba(255, 215, 0, 0.3)';
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+    
+    // Add floating animation to FAQ questions
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+        item.classList.add('fade-in');
+        
+        // Toggle FAQ answers
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        if (question && answer) {
+            answer.style.maxHeight = '0';
+            answer.style.opacity = '0';
+            answer.style.overflow = 'hidden';
+            answer.style.transition = 'all 0.3s ease';
+            
+            question.addEventListener('click', function() {
+                const isOpen = answer.style.maxHeight !== '0px';
                 
-                container.appendChild(star);
-            }
-        });
+                // Close all answers
+                faqItems.forEach(otherItem => {
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    if (otherAnswer && otherItem !== item) {
+                        otherAnswer.style.maxHeight = '0';
+                        otherAnswer.style.opacity = '0';
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current answer
+                if (isOpen) {
+                    answer.style.maxHeight = '0';
+                    answer.style.opacity = '0';
+                    item.classList.remove('active');
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.opacity = '1';
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+    
+    // Show header background on scroll
+    function headerScroll() {
+        const header = document.querySelector('.top-header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
     
-    // Call function to create stars
-    createStars();
-    
-    // Initialize countdown timer
-    startCountdown();
-    
-    // Add CSS class to style tooltip
-    const style = document.createElement('style');
-    style.textContent = `
-        .offer-tooltip {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            background: var(--success-color);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            opacity: 0;
-            transition: all 0.3s ease;
-            pointer-events: none;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
-        
-        .offer-tooltip.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-        
-        .offer-tooltip i {
-            margin-right: 5px;
-        }
-        
-        .success-badge {
-            background: rgba(67, 97, 238, 0.05);
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 1.5rem;
-        }
-        
-        .menu-toggle.active i:before {
-            content: "\\f00d";
-        }
-    `;
-    document.head.appendChild(style);
+    window.addEventListener('scroll', headerScroll);
+    headerScroll(); // Check on page load
 }); 
