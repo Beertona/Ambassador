@@ -24,7 +24,7 @@
                 <a href="#faq">FAQ</a>
             </div>
             <div class="cta-button mobile-hidden">
-                <a href="#join-now" class="btn-primary">JOIN NOW</a>
+                <a href="#join-now" class="btn-primary">CLAIM NOW</a>
             </div>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -35,19 +35,29 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>🇺🇸 Hidden Cash Challenge: <span class="highlight">Earn $500</span> This Week!</h1>
+                <h1 id="geo-headline">💰 <span id="visitor-state">Exclusive Offer</span>: Claim Your $100 Reward Today</h1>
                 <div class="hero-checklist">
-                    <p><i class="fas fa-check-circle"></i> Complete offers → Get paid instantly</p>
-                    <p><i class="fas fa-check-circle"></i> Invite friends → Unlock bonuses</p>
-                    <p><i class="fas fa-check-circle"></i> Compete state-wide → Win epic prizes</p>
+                    <p><i class="fas fa-check-circle"></i> Complete simple tasks → Get rewarded instantly</p>
+                    <p><i class="fas fa-check-circle"></i> Invite friends → Multiply your earnings</p>
+                    <p><i class="fas fa-check-circle"></i> Redeem rewards → Free gift cards & cash</p>
+                </div>
+                <div class="trust-badges">
+                    <span class="badge"><img src="https://img.icons8.com/color/48/000000/forbes.png" alt="Forbes"> </span>
+                    <span class="badge"><img src="https://img.icons8.com/color/48/000000/techcrunch.png" alt="TechCrunch"> </span>
+                    <span class="badge security-badge">🔒 128-Bit SSL Secured | <span id="state-users-paid">3,502</span> Users Paid</span>
+                </div>
+                <div class="fomo-alerts">
+                    <div class="fomo-alert">⏱️ Limited-time offer: <span id="spots-left">12</span> rewards available</div>
+                    <div class="fomo-alert">📊 Over 3,500 users received rewards this month</div>
+                    <div class="fomo-alert">⚡ Join thousands of satisfied members today</div>
                 </div>
                 <div class="hero-cta">
-                    <a href="#join-now" class="btn-primary btn-large btn-animated">
-                        <i class="fas fa-rocket"></i> JOIN FREE NOW
+                    <a href="#rewards" class="btn-primary btn-large btn-animated">
+                        <i class="fas fa-rocket"></i> CLAIM YOUR REWARD NOW
                     </a>
                     <div class="live-stats">
                         <div class="pulse-dot"></div>
-                        <p><strong>1,234</strong> rewards claimed today</p>
+                        <p><strong id="claims-today">1,234</strong> rewards claimed today</p>
                     </div>
                 </div>
             </div>
@@ -71,33 +81,39 @@
             <div class="winner-feed">
                 <div class="feed-header">
                     <div class="pulse-dot"></div>
-                    <h3>LIVE WINNERS</h3>
+                    <h3>🔴 LIVE WINNERS</h3>
                 </div>
-                <div class="feed-items">
+                <div class="feed-items" id="dynamic-winner-feed">
                     <div class="feed-item">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="User Avatar">
+                        <div class="avatar-icon female">
+                            <i class="fas fa-user"></i>
+                        </div>
                         <div class="feed-content">
-                            <p>⚡️ Jennifer (NY) just claimed $75!</p>
+                            <p>⚡️ Jennifer (<span class="winner-state">NY</span>) won $75 via <span class="offer-name">Quick Survey</span> → <span class="highlight">You're Next!</span></p>
                             <span class="timestamp">Just now</span>
                         </div>
                     </div>
                     <div class="feed-item">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar">
+                        <div class="avatar-icon male">
+                            <i class="fas fa-user"></i>
+                        </div>
                         <div class="feed-content">
-                            <p>🎮 Mike (TX) unlocked PlayStation Plus!</p>
+                            <p>🎮 Mike (<span class="winner-state">TX</span>) unlocked PlayStation Plus via <span class="offer-name">App Install</span> → <span class="highlight">Try it!</span></p>
                             <span class="timestamp">2 minutes ago</span>
                         </div>
                     </div>
                     <div class="feed-item">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User Avatar">
+                        <div class="avatar-icon female">
+                            <i class="fas fa-user"></i>
+                        </div>
                         <div class="feed-content">
-                            <p>💰 Sarah (FL) won AirPods!</p>
+                            <p>💰 Sarah (<span class="winner-state">FL</span>) won AirPods via <span class="offer-name">Friend Invite</span> → <span class="highlight">Your Turn!</span></p>
                             <span class="timestamp">5 minutes ago</span>
                         </div>
                     </div>
                 </div>
                 <div class="next-payout">
-                    <p>⏳ Next payout in <span class="countdown">12:34</span> mins...</p>
+                    <p>⏳ <span class="highlight">You could be next!</span> Next payout in <span class="countdown">12:34</span> mins...</p>
                 </div>
             </div>
         </div>
@@ -135,7 +151,7 @@
                     <div class="progress" style="width: 40%;"></div>
                 </div>
                 <p class="progress-text">$50/$100 unlocked! Tag 2 friends to speed up!</p>
-                <a href="#join-now" class="btn-primary">START EARNING NOW</a>
+                <a href="#rewards" class="btn-primary">START EARNING NOW</a>
             </div>
         </div>
     </section>
@@ -158,29 +174,50 @@
     <section class="rewards" id="rewards">
         <div class="container">
             <h2 class="section-title">🎁 Earn Instant <span class="highlight">Rewards</span></h2>
+            
+            <!-- User Progress Tracker -->
+            <div class="reward-progress">
+                <div class="progress-step completed">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Sign Up</div>
+                </div>
+                <div class="progress-connector active"></div>
+                <div class="progress-step active">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Complete Offer</div>
+                </div>
+                <div class="progress-connector"></div>
+                <div class="progress-step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Get Paid</div>
+                </div>
+            </div>
+            
             <div class="reward-tabs">
-                <button class="tab-btn active" data-target="instant-rewards">Instant Rewards</button>
-                <button class="tab-btn" data-target="squad-rewards">Squad Rewards</button>
-                <button class="tab-btn" data-target="vip-rewards">VIP Tier</button>
+                <button class="tab-btn active" data-target="instant-rewards">Quick Cash 💰</button>
+                <button class="tab-btn" data-target="squad-rewards">Big Wins 🎮</button>
+                <button class="tab-btn" data-target="vip-rewards">Mega Rewards 🎧</button>
             </div>
             <div class="reward-content active" id="instant-rewards">
                 <div class="reward-cards">
                     <div class="reward-card">
-                        <div class="card-header">
+                        <div class="card-header blue-header">
                             <span class="coin-cost">Complete 1 Offer</span>
+                            <span class="urgency-tag blue-tag">⚡ 3 <span class="state-name">TX</span> Users Claimed This in 1 Hour</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/fluency/96/000000/money-bag-euro.png" alt="Cash">
                             <h3>$3 Cash</h3>
-                            <p>Try a game for 30 seconds!</p>
+                            <p id="first-card-description">Try a game for 30 seconds!</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#join-now" class="btn-secondary">Claim Now</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                     <div class="reward-card">
-                        <div class="card-header">
-                            <span class="coin-cost">5 Min Task</span>
+                        <div class="card-header green-header">
+                            <span class="coin-cost">1 Min Task</span>
+                            <span class="urgency-tag green-tag">⚡ 7 <span class="state-name">TX</span> Users Claimed This Today</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/color/96/000000/starbucks.png" alt="Starbucks">
@@ -188,13 +225,14 @@
                             <p>Fill a quick survey</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#join-now" class="btn-secondary">Claim Now</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                     <div class="reward-card">
-                        <div class="card-header popular">
+                        <div class="card-header pink-header">
                             <span class="coin-cost">Invite 3 Friends</span>
                             <span class="popular-tag">POPULAR</span>
+                            <span class="urgency-tag pink-tag">⚡ 12 <span class="state-name">TX</span> Users Got This in 3 Hours</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/color/96/000000/paypal.png" alt="PayPal">
@@ -202,12 +240,13 @@
                             <p>Direct to PayPal/CashApp</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#join-now" class="btn-secondary">Claim Now</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                     <div class="reward-card">
-                        <div class="card-header">
+                        <div class="card-header purple-header">
                             <span class="coin-cost">50 Coins</span>
+                            <span class="urgency-tag purple-tag">⚡ 2 <span class="state-name">TX</span> Users Entered Today</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/color/96/000000/controller.png" alt="PS5">
@@ -215,19 +254,20 @@
                             <p>1 Entry per 50 Coins</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#join-now" class="btn-secondary">Claim Now</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                 </div>
                 <div class="cta-center">
-                    <a href="#join-now" class="btn-primary btn-large">👉 GET STARTED NOW</a>
+                    <a href="javascript:void(0)" id="claim-reward-btn" class="btn-primary btn-large">CLAIM YOUR REWARD NOW</a>
                 </div>
             </div>
             <div class="reward-content" id="squad-rewards">
                 <div class="reward-cards">
                     <div class="reward-card">
-                        <div class="card-header">
+                        <div class="card-header blue-header">
                             <span class="coin-cost">3 Friends</span>
+                            <span class="urgency-tag blue-tag">⚡ 5 <span class="state-name">TX</span> Squads Formed Today</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/fluency/96/000000/group.png" alt="Squad Bonus">
@@ -235,12 +275,13 @@
                             <p>+ 1 Fortune Wheel Spin</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Invite Friends</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                     <div class="reward-card">
-                        <div class="card-header">
+                        <div class="card-header green-header">
                             <span class="coin-cost">5 Friends</span>
+                            <span class="urgency-tag green-tag">⚡ 3 <span class="state-name">TX</span> Squads Unlocked Today</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/fluency/96/000000/treasure-chest.png" alt="Gold Vault">
@@ -248,13 +289,14 @@
                             <p>2x More Profitable Offers</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Invite Friends</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                     <div class="reward-card">
-                        <div class="card-header popular">
+                        <div class="card-header pink-header">
                             <span class="coin-cost">10 Friends</span>
                             <span class="popular-tag">BEST VALUE</span>
+                            <span class="urgency-tag pink-tag">⚡ 1 <span class="state-name">TX</span> Squad Just Reached!</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/color/96/000000/wolf.png" alt="Wolf Pack">
@@ -262,12 +304,13 @@
                             <p>$50 + Spotify Premium</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Invite Friends</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                     <div class="reward-card">
-                        <div class="card-header">
+                        <div class="card-header purple-header">
                             <span class="coin-cost">20 Friends</span>
+                            <span class="urgency-tag purple-tag">⚡ Close to Achievement!</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/fluency/96/000000/crown.png" alt="VIP Mafia">
@@ -275,7 +318,7 @@
                             <p>$200 Cash Guaranteed</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Invite Friends</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                 </div>
@@ -283,8 +326,9 @@
             <div class="reward-content" id="vip-rewards">
                 <div class="reward-cards">
                     <div class="reward-card">
-                        <div class="card-header">
+                        <div class="card-header blue-header">
                             <span class="coin-cost">Bronze Badge</span>
+                            <span class="urgency-tag blue-tag">⚡ 9 <span class="state-name">TX</span> Users Earned</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/color/96/000000/bronze-medal--v1.png" alt="Bronze Explorer">
@@ -292,12 +336,13 @@
                             <p>Instagram Badge #CashQuestExplorer</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Earn Badge</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                     <div class="reward-card">
-                        <div class="card-header">
+                        <div class="card-header green-header">
                             <span class="coin-cost">Silver Badge</span>
+                            <span class="urgency-tag green-tag">⚡ 4 <span class="state-name">TX</span> Users Earned</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/color/96/000000/silver-medal--v1.png" alt="Silver Adventurer">
@@ -305,13 +350,14 @@
                             <p>Early Access to New Offers</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Earn Badge</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                     <div class="reward-card">
-                        <div class="card-header popular">
+                        <div class="card-header pink-header">
                             <span class="coin-cost">Gold Badge</span>
                             <span class="popular-tag">EXCLUSIVE</span>
+                            <span class="urgency-tag pink-tag">⚡ 2 <span class="state-name">TX</span> Users Earned</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/color/96/000000/gold-medal--v1.png" alt="Gold Treasure Hunter">
@@ -319,21 +365,32 @@
                             <p>Custom "I'm Rich 💸" GIF</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Earn Badge</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
                     </div>
                     <div class="reward-card">
-                        <div class="card-header">
+                        <div class="card-header purple-header">
                             <span class="coin-cost">Diamond Badge</span>
+                            <span class="urgency-tag purple-tag">⚡ Just 1 Spot Left!</span>
                         </div>
                         <div class="card-body">
                             <img src="https://img.icons8.com/color/96/000000/diamond--v1.png" alt="Diamond Legend">
                             <h3>Diamond Legend</h3>
-                            <p>Weekend in Miami + $500</p>
+                            <p>AirPods + $500 Cash</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#claim" class="btn-secondary">Earn Badge</a>
+                            <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE OFFER</a>
                         </div>
+                    </div>
+                </div>
+                <div class="featured-reward">
+                    <div class="featured-image">
+                        <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MME73?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1632861342000" alt="AirPods">
+                    </div>
+                    <div class="featured-content">
+                        <h3>🔥 Featured Reward: Apple AirPods</h3>
+                        <p>Complete any 3 offers OR refer 5 friends to instantly qualify for our AirPods giveaway!</p>
+                        <a href="https://smrturl.co/4b97015" class="btn-primary" target="_blank">COMPLETE OFFER NOW</a>
                     </div>
                 </div>
             </div>
@@ -342,8 +399,22 @@
 
     <section class="state-challenge">
         <div class="container">
-            <h2 class="section-title">🏆 State vs State <span class="highlight">Leaderboard</span></h2>
-            <p class="section-description">Which state will claim the most treasure this week?</p>
+            <h2 class="section-title">🏆 State vs State <span class="highlight">Competition</span></h2>
+            <p class="section-description">Your state is competing for the $10,000 prize pool!</p>
+            
+            <div class="state-rivalry">
+                <h3><span class="your-state">Your State</span> vs <span id="rival-state-2">Rival State</span></h3>
+                <div class="rivalry-progress">
+                    <div class="state-1-bar" style="width: 45%;">
+                        <span class="state-name">TX</span>
+                    </div>
+                    <div class="state-2-bar" style="width: 55%;">
+                        <span id="rival-state-name">CA</span>
+                    </div>
+                </div>
+                <p class="rivalry-status"><span id="rival-state-3">CA</span> is $200 Ahead of <span class="state-name">TX</span> – <span class="highlight">Close the Gap!</span></p>
+            </div>
+            
             <div class="leaderboard">
                 <div class="leaderboard-item top">
                     <span class="rank">1</span>
@@ -387,8 +458,8 @@
                 </div>
             </div>
             <div class="state-cta">
-                <p class="state-bonus">New Yorkers, you're falling behind! <span class="highlight">Earn $10 extra</span> for every 3 offers this week.</p>
-                <a href="#join-now" class="btn-primary">Join your state's team now!</a>
+                <p class="state-bonus"><span class="your-state-name">Your state</span> is falling behind! <span class="highlight">Earn $10 extra</span> for every 3 offers this week.</p>
+                <a href="https://smrturl.co/4b97015" class="btn-primary">Rep your state & earn now! 🔥</a>
             </div>
         </div>
     </section>
@@ -398,8 +469,8 @@
             <h2 class="section-title">💬 Success <span class="highlight">Stories</span></h2>
             <div class="testimonial-cards">
                 <div class="testimonial-card">
-                    <div class="testimonial-image">
-                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Testimonial">
+                    <div class="testimonial-avatar male">
+                        <i class="fas fa-user-circle"></i>
                     </div>
                     <div class="testimonial-content">
                         <p>"I was skeptical at first, but I've already cashed out $347 in my first month. Super easy!"</p>
@@ -414,8 +485,8 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-image">
-                        <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="Testimonial">
+                    <div class="testimonial-avatar female">
+                        <i class="fas fa-user-circle"></i>
                     </div>
                     <div class="testimonial-content">
                         <p>"My squad and I all won AirPods last week! Already working on our next big prize!"</p>
@@ -436,19 +507,87 @@
         </div>
     </section>
 
+    <section class="payment-proof">
+        <div class="container">
+            <h2 class="section-title">💰 Real Payment <span class="highlight">Proof</span></h2>
+            <p class="section-description">See recent payments sent to our members</p>
+            
+            <div class="payment-gallery">
+                <div class="payment-item">
+                    <div class="payment-screenshot">
+                        <img src="./images/PayPal Payment Proof.png" alt="PayPal Payment Proof">
+                    </div>
+                    <div class="payment-details">
+                        <h4>PayPal Payment</h4>
+                        <p>$70.00 sent to Jessica W.</p>
+                        <span class="payment-date">Tuesday, 11:42 AM</span>
+                    </div>
+                </div>
+                <div class="payment-item">
+                    <div class="payment-screenshot">
+                        <img src="./images//PayPal Payment Proof_2.png" alt="PayPal Payment Proof">
+                    </div>
+                    <div class="payment-details">
+                        <h4>PayPal Payment</h4>
+                        <p>$25.00 sent to Marina</p>
+                        <span class="payment-date">Yesterday, 3:15 PM</span>
+                    </div>
+                </div>
+                <div class="payment-item">
+                    <div class="payment-screenshot">
+                        <img src="https://cdn.shopify.com/s/files/1/0554/1977/0301/files/5db29a5f-ee7a-403e-b2cb-5a6b4daed5b0.image.png" alt="Netflix Payment Proof">
+                    </div>
+                    <div class="payment-details">
+                        <h4>Netflix Subscription</h4>
+                        <p>1 Month Premium sent to Robert K.</p>
+                        <span class="payment-date">Today, 9:20 AM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-to-claim">
+                <h3>How to Claim Your Payment in 3 Simple Steps:</h3>
+                <div class="claim-steps">
+                    <div class="claim-step">
+                        <div class="step-number">1</div>
+                        <h4>Complete 3 Offers</h4>
+                        <p>Finish any 3 quick offers from our rewards section</p>
+                    </div>
+                    <div class="claim-step">
+                        <div class="step-number">2</div>
+                        <h4>Request Payout</h4>
+                        <p>Submit your payment details (PayPal, CashApp, etc.)</p>
+                    </div>
+                    <div class="claim-step">
+                        <div class="step-number">3</div>
+                        <h4>Get Paid Within 24hrs</h4>
+                        <p>We process all payments within 24 hours, guaranteed!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-total">
+                <div class="total-paid">
+                    <h3>Total Paid Out</h3>
+                    <p class="counter">$128,456</p>
+                    <span>to over 7,500 members</span>
+                </div>
+                <a href="javascript:void(0)" class="btn-primary" id="open-payment-modal">GET YOUR PAYMENT NEXT</a>
+            </div>
+        </div>
+    </section>
+
     <section class="join-now" id="join-now">
         <div class="container">
             <div class="join-content">
-                <h2>Your Next <span class="highlight">$100</span> is 1 Click Away!</h2>
-                <p>Why Watch Netflix When You Can Fund It? 🍿</p>
-                <form class="join-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="text" placeholder="Your State" required>
-                    <button type="submit" class="btn-primary btn-large btn-animated">START YOUR QUEST</button>
+                <h2>Your <span class="highlight">$100 Reward</span> is Waiting!</h2>
+                <p>Start earning rewards today</p>
+                <form class="join-form" id="email-capture-form" onsubmit="event.preventDefault(); window.location.href='#rewards';">
+                    <input type="email" placeholder="Enter your email to get started" required>
+                    <button type="submit" class="btn-primary btn-large btn-animated">GET STARTED NOW</button>
                 </form>
                 <div class="spots-left">
-                    <p><span class="highlight">3 spots left</span> in your state. Grab yours now!</p>
+                    <p><span class="highlight"><span id="countdown-spots">3</span> spots left</span> for today's offer. Act now!</p>
                 </div>
             </div>
             <div class="mystery-box">
@@ -463,6 +602,51 @@
                     </div>
                 </div>
                 <p>Click to open your box! 🔓 You could win big!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="post-offer-flow" id="post-offer-flow" style="display: none;">
+        <div class="container">
+            <div class="queue-status">
+                <h2>You're Now #<span id="queue-position">24</span> in <span class="state-name">TX</span>!</h2>
+                <p>Invite 3 Friends to Jump to #1</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 30%;"></div>
+                </div>
+                <p>3 more friends to reach position #1!</p>
+            </div>
+            
+            <div class="share-options">
+                <h3>Share & Get Ahead</h3>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn tiktok" onclick="shareToTikTok()">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
+                    <a href="#" class="share-btn instagram" onclick="shareToInstagram()">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="#" class="share-btn twitter" onclick="shareToTwitter()">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </div>
+                
+                <div class="viral-ctas">
+                    <div class="cta-template">
+                        <h4>TikTok Caption:</h4>
+                        <p>Literally just made $50 in 5 mins on #CashQuest 🤑 No cap, the easiest money I've made. Link in bio! 💰 #EasyMoney #SideHustle</p>
+                    </div>
+                    
+                    <div class="cta-template">
+                        <h4>Instagram Story:</h4>
+                        <p>Swipe up ⬆️ I just found this app that's giving away $100 to people in [STATE]! I already got $25 and it took like 2 minutes! #CashQuest #FreeMoneyCheck</p>
+                    </div>
+                    
+                    <div class="cta-template">
+                        <h4>Twitter Post:</h4>
+                        <p>I thought this was a scam but I just got $15 sent to my PayPal in 5 minutes?! 😳 [STATE] people check this out before spots fill up! #CashQuest #FreeMoney</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -552,6 +736,104 @@
             </div>
         </div>
     </footer>
+
+    <!-- Offers Requirement Modal -->
+    <div id="offers-required-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>🔐 Complete Offers to Unlock Rewards</h2>
+                <p>You need to complete 3 offers before claiming your payment</p>
+            </div>
+            <div class="modal-body">
+                <div class="offers-progress">
+                    <div class="offers-counter">
+                        <div class="counter-label">Offers Completed</div>
+                        <div class="counter-display">
+                            <span id="completed-offers">0</span>/3
+                        </div>
+                    </div>
+                    <div class="offers-bar">
+                        <div class="offers-progress-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="offers-message">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Complete any 3 offers from the rewards section to unlock your payment. Each offer you complete gets you closer to your reward!</p>
+                </div>
+                <div class="offers-list">
+                    <h3>Recommended Offers:</h3>
+                    <div class="mini-offer">
+                        <img src="https://img.icons8.com/fluency/96/000000/money-bag-euro.png" alt="Cash">
+                        <div class="mini-offer-details">
+                            <h4>$3 Cash</h4>
+                            <p>Quick and easy to complete</p>
+                        </div>
+                        <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE</a>
+                    </div>
+                    <div class="mini-offer">
+                        <img src="https://img.icons8.com/color/96/000000/starbucks.png" alt="Starbucks">
+                        <div class="mini-offer-details">
+                            <h4>$10 Starbucks</h4>
+                            <p>Only takes 1 minute</p>
+                        </div>
+                        <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE</a>
+                    </div>
+                    <div class="mini-offer">
+                        <img src="https://img.icons8.com/color/96/000000/paypal.png" alt="PayPal">
+                        <div class="mini-offer-details">
+                            <h4>$15 Cash</h4>
+                            <p>Most popular choice</p>
+                        </div>
+                        <a href="https://smrturl.co/4b97015" class="btn-secondary" target="_blank">COMPLETE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="offers-return-btn" class="btn-primary">RETURN TO OFFERS</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PayPal Email Collection Modal -->
+    <div id="paypal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>🎉 One Last Step to Get Paid!</h2>
+                <p>Enter your PayPal email to receive your payment within 24 hours</p>
+            </div>
+            <div class="modal-body">
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="paypal-email">PayPal Email</label>
+                        <input type="email" id="paypal-email" placeholder="your-email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-method">Payment Method</label>
+                        <select id="payment-method" required>
+                            <option value="paypal">PayPal</option>
+                            <option value="cashapp">CashApp</option>
+                            <option value="venmo">Venmo</option>
+                        </select>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="terms-check" required>
+                        <label for="terms-check">I agree to the <a href="#">Terms & Conditions</a></label>
+                    </div>
+                    <button type="submit" class="btn-primary btn-large">CONFIRM & GET PAID</button>
+                </form>
+                <div class="payment-security">
+                    <p><i class="fas fa-lock"></i> Your information is secure and will never be shared</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="recent-payments">
+                    <p><strong>Recent Payments:</strong> John D. (2 mins ago), Sarah M. (5 mins ago)</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
